@@ -6,26 +6,27 @@ var dots = document.querySelectorAll(".dot")
 
 console.log(dots.length);
 
-var distance = -1000;
+var distance = -100;
 var index = 1;
+var num = 0;
 
 left.addEventListener("click",()=>{
-	animate(1000);
+	just(100,1);
 	index--;
 	btnActive();
 });
 
 right.addEventListener("click",()=>{
-	animate(-1000);
+	just(-100,-1);
 	index++;
 	btnActive();
 });
 
 function animate(offet){
-	if(distance<-5000)distance=-1000;
-	if(distance>-1000)distance=-5000;
+	if(distance<-500)distance=-100;
+	if(distance>-100)distance=-500;
 	distance += offet;
-	show.style.transform="translate("+distance+"px,0)"
+	show.style.left=distance+"%"
 };
 
 function btnActive(){
@@ -42,5 +43,21 @@ for(var i=0;i<dots.length;i++){
 	dots[i].addEventListener("click",function(){
 		alert(i)
 	});
+}
+
+function just(offet,direct){
+	if(num>offet && direct<0 || num<offet && direct>0){
+		num += direct*10;
+		distance += direct*10;
+		show.style.left=distance+"%";
+		console.log(distance,num);
+		window.setTimeout(()=>{
+			this.just(offet,direct)
+		},20);
+	}else{
+		num=0;
+		if(distance<-500)distance=-100;
+		if(distance>-100)distance=-500;
+	}
 }
 

@@ -17,9 +17,10 @@
 }
 
 .show{
+	position:relative;
 	width:7000px;
 	height:400px;
-	transform:translate(-1000px,0);
+	left:-100%;
 }
 
 .show img{
