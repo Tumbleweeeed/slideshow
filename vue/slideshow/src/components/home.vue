@@ -1,10 +1,23 @@
 <template>
 	<div class="wrapper">
+		<div class="arrow">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
 		<div class="contain">
-			
+			<div class="show">
+				<li>
+					<img src="../../static/img/5.jpg" alt="">
+				</li>
+				<li v-for="item in img" :key="index">
+					<img :src="item" alt="">
+				</li>
+				<li>
+					<img src="../../static/img/1.jpg" alt="">
+				</li>
+			</div>
 		</div>
 		<div class="dots">
-			<span class="dot"></span>
 			<span class="dot"></span>
 			<span class="dot"></span>
 			<span class="dot"></span>
@@ -19,17 +32,12 @@ export default {
 	name:"Home",
 	data(){
 		return{
-			img:[""]
+			img:["../../static/img/1.jpg","../../static/img/2.jpg","../../static/img/3.jpg","../../static/img/4.jpg","../../static/img/5.jpg"]
 		}
 	}
 }
 </script>
 
 <style lang="stylus" scoped>
-	.wrapper
-		width 700px
-		height 300px
-		top 20px
-		margin 80px auto
-		background red
-</style>
+	@import '../../static/css/main.styl'
+</style> 
