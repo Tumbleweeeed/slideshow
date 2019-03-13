@@ -8,3 +8,4 @@
  
  2、vue实现
  http://htmlpreview.github.io/?https://github.com/Tumbleweeeed/slideshow/blob/master/vue/slideshow/dist/index.html#/
+ ![vue轮播图](./gif/2.gif)
